@@ -1,8 +1,10 @@
-let s:REGEX_NUM = '\d*\.\?\d*'
+let s:REGEX_NUM = '\d\{1,3}'
+let s:REGEX_DEC = '\d\?\.\?\d'
 
 fun! hexokinase#patterns#latex_rgb#get_pattern() abort
+    let val = '\('.s:REGEX_NUM.'\|'.s:REGEX_DEC.'\)'
     let _ = '\s*'
-    return '{\(rgb|RGB\)}{'._.s:REGEX_NUM._.','._.s:REGEX_NUM._.','._.s:REGEX_NUM._.'}'
+    return '{\(rgb|RGB\)}{'._.val._.','._.val._.','._.val._.'}'
 endf
 
 fun! hexokinase#patterns#latex_rgb#process(str) abort
