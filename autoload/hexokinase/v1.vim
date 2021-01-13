@@ -11,7 +11,8 @@ fun! hexokinase#v1#setup() abort
     let g:Hexokinase_signIcon = get(g:, 'Hexokinase_signIcon', '■')
 
     " initialize various patterns that are supported by default
-    let g:Hexokinase_optInPatterns = get(g:, 'Hexokinase_optInPatterns', ['full_hex', 'triple_hex', 'rgb', 'rgba'])
+    " let g:Hexokinase_optInPatterns = get(g:, 'Hexokinase_optInPatterns', ['full_hex', 'triple_hex', 'rgb', 'rgba'])
+    let g:Hexokinase_optInPatterns = get(g:, 'Hexokinase_optInPatterns', ['full_hex','rgb','rgba','hsl','hsla','colour_names','latex_cmyk','latex_gray','latex_rgb','latex_hex'])
     let g:Hexokinase_patterns = get(g:, 'Hexokinase_patterns', {})
     for pat in g:Hexokinase_optInPatterns
         if pat ==# 'full_hex'

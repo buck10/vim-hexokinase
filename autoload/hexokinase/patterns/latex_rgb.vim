@@ -4,7 +4,7 @@ let s:REGEX_DEC = '\d\?\.\?\d'
 fun! hexokinase#patterns#latex_rgb#get_pattern() abort
     let val = '\('.s:REGEX_NUM.'\|'.s:REGEX_DEC.'\)'
     let _ = '\s*'
-    return '{\(rgb|RGB\)}{'._.val._.','._.val._.','._.val._.'}'
+    return '{\(rgb\|RGB\)}{'._.val._.','._.val._.','._.val._.'}'
 endf
 
 fun! hexokinase#patterns#latex_rgb#process(str) abort
@@ -16,7 +16,7 @@ fun! hexokinase#patterns#latex_rgb#process(str) abort
 endf
 
 fun! hexokinase#patterns#latex_rgb#latex_rgb2_str_to_nums(rgb_str) abort
-    let multiplier = matchstr(a:rgb_str, '\(rgb|RGB\)') ==# 'rgb' ? 255 : 1
+    let multiplier = matchstr(a:rgb_str, '\(rgb\|RGB\)') ==# 'rgb' ? 255 : 1
     let r = floor(s:get_formatted_value('{', ',', a:rgb_str) * multiplier)
     let g = floor(s:get_formatted_value(',', ',', a:rgb_str) * multiplier)
     let b = floor(s:get_formatted_value(',', '}', a:rgb_str) * multiplier)
