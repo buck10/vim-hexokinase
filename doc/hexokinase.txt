@@ -331,16 +331,11 @@ Refresh Events                                    *g:Hexokinase_refreshEvents*
                 Which |autocmd-events| trigger a refresh of highlighting.
 
                 Default value: >
-                let g:Hexokinase_refreshEvents = ['BufWrite', 'BufRead']
+                let g:Hexokinase_refreshEvents = ['TextChanged', 'InsertLeave', 'BufRead']
 <
-                Since the scraping is done asynchronously and no more than a
-                single scraping job is started per buffer, you can use more
-                aggressive |autocmd-events|. For live updating you could use
-                ['TextChanged', 'InsertLeave'].
-
 Disabled TerminalBuffers                            *g:Hexokinase_termDisabled*
 
-                Type: |Integer| 
+                Type: |Integer|
                 Do not scraped any terminal buffers.
 
                 Default value: >
