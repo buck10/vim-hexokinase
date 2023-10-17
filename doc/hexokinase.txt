@@ -13,6 +13,7 @@ Quick Start..................................|hexokinase-quick-start|
 Installation.................................|hexokinase-installation|
 Commands.....................................|hexokinase-commands|
 Configuration................................|hexokinase-configuration|
+    Start Hexokinase in off state............|g:Hexokinase_startOff|
     Highlighters.............................|g:Hexokinase_highlighters|
     Custom Patterns via Palettes ............|g:Hexokinase_palettes|
     Patterns To Find ........................|g:Hexokinase_optInPatterns|
@@ -119,6 +120,18 @@ COMMANDS                                                *hexokinase-commands*
 
 CONFIGURATION                                      *hexokinase-configuration*
 ===========================================================================
+
+Start Hexokinase in off state                         *g:Hexokinase_startOff*
+
+                Type: |Integer|
+                Do not colourize colours in line on startup.
+
+                Default value: >
+                    let g:Hexokinase_startOff = 0
+<
+                By Default, colour values are colourized on startup.
+
+
 
 Highlighters                                      *g:Hexokinase_highlighters*
 

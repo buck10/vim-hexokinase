@@ -49,6 +49,13 @@ fun! hexokinase#v2#setup() abort
         exe 'autocmd '.join(g:Hexokinase_refreshEvents, ',').' * call s:on_refresh_event()'
         autocmd ColorScheme * call s:on_refresh_event()
     augroup END
+
+    let g:Hexokinase_startOff = get(g:, 'Hexokinase_startOff', 0)
+    if g:Hexokinase_startOff
+        call hexokinase#v2#scraper#off()
+    else
+        call hexokinase#v2#scraper#on()
+    endif
 endf
 
 fun! s:on_refresh_event() abort
